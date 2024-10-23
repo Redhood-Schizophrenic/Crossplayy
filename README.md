@@ -3,6 +3,34 @@
 
 ----------------------------------------------------------------------------------
 
+## Devices Category
+
+###### 1. Add Devices Type
+/api/device_types/add
+`POST`
+```json
+{
+    "category_name": "Playstation"
+}
+```
+
+###### 2. Get Devices Type 
+/api/device_types/fetch
+`GET`
+
+
+###### 3. Edit Details
+/api/devices/fetch
+`PUT`
+```json
+{
+    "category_id": "a60065c3-29c8-4181-8d54-1c7c72551412",
+    "category_name": "Playstation"
+}
+```
+
+----------------------------------------------------------------------------------
+
 ## Devices
 
 ###### 1. Add Devices
@@ -96,3 +124,4 @@ snacks & water_bottles quantities
     "session_id": "5b952138-d4aa-4701-bb19-57d079c6607c"
 }
 ```
+----------------------------------------------------------------------------------

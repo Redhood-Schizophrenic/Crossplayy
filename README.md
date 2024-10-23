@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# API Requests
 
-## Getting Started
 
-First, run the development server:
+----------------------------------------------------------------------------------
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Devices
+
+###### 1. Add Devices
+/api/device_types/add
+`POST`
+```json
+{
+    "category_id": "56d7df8d-9543-4a6f-9d69-e8c52fa30688",
+    "device_name": "PC-1"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+###### 2. Get Devices 
+/api/devices/fetch
+`GET`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+###### 3. Edit Details
+/api/devices/edit/details
+`PUT`
+```json
+{
+    "device_id": "e645018c-0783-4bb5-9887-45d01ec4a675",
+    "device_name": "PS-1"
+}
+```
 
-## Learn More
+###### 4. Edit Status
+/api/devices/edit/status
+`PUT`
+```json
+{
+    "device_id": "e645018c-0783-4bb5-9887-45d01ec4a675",
+    "status": "Booked"
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+----------------------------------------------------------------------------------
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Gaming Sessions
 
-## Deploy on Vercel
+###### 1. Add Session 
+/api/gaming_session/add
+`POST`
+```json
+{
+    "customer_name": "User",
+    "customer_contact": "1234567890",
+    "device_name": "PC-1",
+    "date": "23rd Oct 2024",
+    "hours": 2,
+    "in_time": "10 am",
+    "out_time": "12 am",
+    "discount": "Happy Hours",
+    "no_of_players": 3,
+    "snacks": 2,
+    "water_bottles": 1
+}
+```
+discount :- None / Happy Hours
+snacks & water_bottles quantities
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+###### 2. Update Snacks  
+/api/gaming_session/snacks
+`PUT`
+```json
+{
+    "session_id": "5b952138-d4aa-4701-bb19-57d079c6607c",
+    "snacks": 3,
+    "water_bottles": 2
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+###### 3. Session Extend
+/api/gaming_session/extend
+`PUT`
+```json
+{
+    "session_id": "5b952138-d4aa-4701-bb19-57d079c6607c",
+    "minutes": 30,
+    "out_time": "11:30 am"
+}
+```
+
+###### 4. Close Session
+/api/gaming_session/close
+`PUT`
+```json
+{
+    "session_id": "5b952138-d4aa-4701-bb19-57d079c6607c"
+}
+```

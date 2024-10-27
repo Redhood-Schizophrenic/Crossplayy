@@ -6,6 +6,11 @@ export async function read_devices() {
 
 		// Inserting the record
 		const result = await db.devices.findMany({
+			where: {
+				NOT: {
+					Status: "Inactive"
+				}
+			},
 			orderBy: {
 				DeviceName: "asc"
 			},
@@ -41,7 +46,10 @@ export async function read_device_info({ device_name }) {
 		// Inserting the record
 		const result = await db.devices.findMany({
 			where: {
-				DeviceName: device_name
+				DeviceName: device_name,
+				NOT: {
+					Status: "Inactive"
+				}
 			},
 			include: {
 				Category: true

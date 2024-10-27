@@ -20,7 +20,7 @@
 
 
 ###### 3. Edit Details
-/api/devices/fetch
+/api/device_types/edit
 `PUT`
 ```json
 {
@@ -34,7 +34,7 @@
 ## Devices
 
 ###### 1. Add Devices
-/api/device_types/add
+/api/devices/add
 `POST`
 ```json
 {

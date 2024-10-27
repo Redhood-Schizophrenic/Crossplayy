@@ -124,4 +124,17 @@ snacks & water_bottles quantities
     "session_id": "5b952138-d4aa-4701-bb19-57d079c6607c"
 }
 ```
+
+###### 5. Fetch Closed Session
+/api/gaming_session/fetch/closed
+`GET`
+
+###### 6. Fetch Open Session
+/api/gaming_session/fetch/open
+`GET`
+
+###### 7. Fetch Session History
+/api/gaming_session/fetch/history
+`GET`
+
 ----------------------------------------------------------------------------------

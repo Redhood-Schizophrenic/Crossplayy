@@ -49,7 +49,7 @@ export const add_gaming_session = async (data) => {
 				if (player_type === "Single") {
 					session_price = 75 * hours;
 				} else if (player_type === "Multiplayer") {
-					session_price = 35 * no_of_players * hours;
+					session_price = (35 * hours) * no_of_players;
 				}
 			}
 
@@ -58,7 +58,7 @@ export const add_gaming_session = async (data) => {
 				if (player_type === "Single") {
 					session_price = 150 * hours;
 				} else if (player_type === "Multiplayer") {
-					session_price = 70 * no_of_players * hours;
+					session_price = (70 * hours) * no_of_players;
 				}
 			}
 		}

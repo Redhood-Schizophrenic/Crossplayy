@@ -8,6 +8,8 @@ export async function GET() {
 			returncode: result.returncode,
 			message: result.message,
 			output: result.output,
+		}, {
+			status: result.returncode
 		});
 
 	} catch (error) {

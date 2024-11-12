@@ -7,7 +7,7 @@ export const extend_gaming_session = async (data) => {
 
 		const session_id = await data['session_id'] || null;
 		let minutes = await data['minutes'] || 15;
-		let hours = await data['hours'] || 1;
+		let hours = (minutes / 60) | 0;
 		const out_time = await data['out_time'] || null;
 		let session_price;
 

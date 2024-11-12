@@ -101,7 +101,7 @@ export const extend_gaming_session = async (data) => {
 			minutes = minutes + parseInt(old_minutes);
 			const hours = parseFloat(minutes / 60);
 
-			const result = update_session_extend({
+			const result = await update_session_extend({
 				session_id,
 				out_time,
 				hours,
@@ -129,6 +129,18 @@ export const extend_gaming_session = async (data) => {
 					session_price = 50 * hours;
 				}
 			}
+
+			const result = await update_session_extend({
+				session_id,
+				out_time,
+				hours,
+				minutes,
+				session_price,
+				status: "Extended"
+			});
+
+			return result;
+
 		}
 
 
